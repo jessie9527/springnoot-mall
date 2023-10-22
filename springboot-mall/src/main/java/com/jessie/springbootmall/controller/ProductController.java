@@ -16,6 +16,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products/{productId}")
+//    這是回傳一個product類型的json
     public ResponseEntity<Product> getProduct(@PathVariable Integer productId) {
 //        當前端來請求url路徑，那就會透過productService的getProductById的方法，去資料庫中查詢這筆商品的數據出來
         Product product = productService.getProductById(productId);
