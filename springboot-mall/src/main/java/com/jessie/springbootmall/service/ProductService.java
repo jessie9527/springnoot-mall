@@ -3,7 +3,11 @@ package com.jessie.springbootmall.service;
 import com.jessie.springbootmall.dto.ProductRequest;
 import com.jessie.springbootmall.model.Product;
 
+import java.util.List;
+
 public interface ProductService {
+
+    List<Product> getProducts();
 
     Product getProductById(Integer productId);
 
