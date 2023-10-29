@@ -1,5 +1,6 @@
 package com.jessie.springbootmall.controller;
 
+import com.jessie.springbootmall.constant.ProductCategory;
 import com.jessie.springbootmall.dto.ProductRequest;
 import com.jessie.springbootmall.model.Product;
 import com.jessie.springbootmall.service.ProductService;
@@ -19,8 +20,11 @@ public class ProductController {
 
 //  查詢商品列表(返回List列表)
     @GetMapping("/products")  // "/products":取得一堆商品、"/products/{productId}":取得一堆商品中特定的其中一個
-    public ResponseEntity<List<Product>> getProducts() {
-        List<Product> productList = productService.getProducts();
+    public ResponseEntity<List<Product>> getProducts(
+            @RequestParam(required = false) ProductCategory category,
+            @RequestParam(required = false) String search
+    ) {
+        List<Product> productList = productService.getProducts(category, search);
 
         return ResponseEntity.status(HttpStatus.OK).body(productList);
     }
