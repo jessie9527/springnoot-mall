@@ -1,6 +1,6 @@
 package com.jessie.springbootmall.service;
 
-import com.jessie.springbootmall.constant.ProductCategory;
+import com.jessie.springbootmall.dto.ProductQueryParams;
 import com.jessie.springbootmall.dto.ProductRequest;
 import com.jessie.springbootmall.model.Product;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProductService {
 
-    List<Product> getProducts(ProductCategory category, String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 
     Product getProductById(Integer productId);
 
